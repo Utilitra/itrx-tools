@@ -66,7 +66,7 @@ function popEgg() {
     <!-- Statusbar: offset right by the sider width so the footer never sits
          under the sidebar (the sider runs full height to own the corner) -->
     <div class="kt-statusbar" :style="{ marginLeft: footerLeft }">
-      <span class="sb-right"><span class="sb-site">killertools.net</span><span class="sb-sep">&middot;</span><span class="kt-ver" title="click me" @click="popEgg">v2.0</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/SteveTheKiller/killer-tools-site" target="_blank" rel="noopener">Source on Github</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><a class="sb-link" href="https://thekiller.net" target="_blank" rel="noopener">Steve the Killer</a></span>
+      <span class="sb-right"><span class="sb-site">itrxtools.utilitra.com</span><span class="sb-xtra">&middot;&nbsp;GPLv3 - <a class="sb-link" href="https://github.com/Utilitra/itrx-tools" target="_blank" rel="noopener">Source on Github</a> &middot; &copy;{{ new Date().getFullYear() }}</span><span class="sb-sep">&middot;</span><span>Utilitra</span></span>
       <div class="kt-grip" aria-hidden="true" />
     </div>
     <Transition name="kt-egg-fade">

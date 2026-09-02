@@ -6,7 +6,7 @@ import type { GlobalThemeOverrides } from 'naive-ui';
 // colored themes (Blood, Greed, Cyanotic) have fixed palettes.
 
 export type KtThemeKey = 'dark' | 'light' | 'black' | 'blood' | 'greed' | 'cyanotic'
-  | 'ectoplasm' | 'decay' | 'malaise' | 'sepulchre' | 'delirium' | 'mourning';
+  | 'ectoplasm' | 'decay' | 'malaise' | 'sepulchre' | 'delirium' | 'mourning' | 'utilitra';
 export type KtAccentKey = 'red' | 'orange' | 'green' | 'teal' | 'blue' | 'purple';
 
 export const NEUTRAL_THEMES: KtThemeKey[] = ['dark', 'light', 'black'];
@@ -295,6 +295,8 @@ const SURFACES: Record<Exclude<KtThemeKey, 'light'>, Omit<DarkPalette, 'accent' 
   sepulchre: { bg: '#3a352f', chrome: '#454039', chromeBorder: '#4d3d2b', panel: '#3a352f', panelBorder: '#4d3d2b', input: '#302c26', popup: '#242729', tableTd: '#3a352f', tableTh: '#4d3d2b', notif: '#242729', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#4faaa8' },
   delirium: { bg: '#343344', chrome: '#3e3c50', chromeBorder: '#5c527d', panel: '#343344', panelBorder: '#5c527d', input: '#2b2a38', popup: '#24212b', tableTd: '#343344', tableTh: '#5c527d', notif: '#24212b', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#dd8500' },
   mourning: { bg: '#554c5d', chrome: '#3b3642', chromeBorder: '#756b79', panel: '#554c5d', panelBorder: '#756b79', input: '#463f4d', popup: '#4f413f', tableTd: '#554c5d', tableTh: '#756b79', notif: '#4f413f', text: '#f4f4f0', text2: '#d7d7cf', textAccent: '#ff6f91' },
+  // Utilitra brand theme: near-black surfaces, crimson accent, hot-pink hover highlights
+  utilitra: { bg: '#231F20', chrome: '#1a1519', chromeBorder: '#2e2528', panel: '#2e2a2c', panelBorder: '#3a3236', input: '#1e1a1c', popup: '#1c181a', tableTd: '#272325', tableTh: '#2e2a2c', notif: '#1c181a', text: '#F3F0ED', text2: '#BDADD2', textAccent: '#DF2665' },
 };
 
 // Fixed button/control colors for the colored themes (landing --btn):
@@ -314,6 +316,8 @@ const FIXED_ACCENTS: Partial<Record<KtThemeKey, AccentTriple>> = {
   sepulchre: { base: '#4faaa8', hover: '#6FB9B8', pressed: '#3F8886', sel: 'rgba(79, 170, 168, 0.42)', rgb: [79, 170, 168] },
   delirium: { base: '#dd8500', hover: '#E39B2E', pressed: '#B16A00', sel: '#cf1020', rgb: [221, 133, 0] },
   mourning: { base: '#ff6f91', hover: '#FF89A5', pressed: '#CC5974', sel: 'rgba(255, 111, 145, 0.42)', rgb: [255, 111, 145] },
+  // Crimson primary, burgundy pressed, muted purple selection fill
+  utilitra: { base: '#A03460', hover: '#B84172', pressed: '#863540', sel: 'rgba(128, 108, 146, 0.40)', rgb: [160, 52, 96] },
 };
 
 export function buildOverridesFor(theme: KtThemeKey, accent?: KtAccentKey | ''): GlobalThemeOverrides {
@@ -350,6 +354,7 @@ export const ktThemes: KtThemeDef[] = [
   { key: 'sepulchre', label: 'Sepulchre', isDark: true, swatchBg: '#3a352f', swatchAccent: '#4faaa8' },
   { key: 'delirium', label: 'Delirium', isDark: true, swatchBg: '#641d25', swatchAccent: '#dd8500' },
   { key: 'mourning', label: 'Mourning', isDark: true, swatchBg: '#554c5d', swatchAccent: '#ff6f91' },
+  { key: 'utilitra', label: 'Utilitra', isDark: true, swatchBg: '#231F20', swatchAccent: '#A03460' },
 ];
 
 export const ktThemeByKey = Object.fromEntries(ktThemes.map(t => [t.key, t])) as Record<KtThemeKey, KtThemeDef>;

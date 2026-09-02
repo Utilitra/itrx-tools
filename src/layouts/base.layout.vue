@@ -9,26 +9,16 @@ import NavbarButtons from '@/components/NavbarButtons.vue';
 import ThemeDots from '@/components/ThemeDots.vue';
 import { config } from '@/config';
 import { useStyleStore } from '@/stores/style.store';
-import { NEUTRAL_THEMES, THEME_DEFAULT_ACCENT } from '@/themes';
+
 import { useToolStore } from '@/tools/tools.store';
 import MenuLayout from '../components/MenuLayout.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
 
-// Generated wordmark art, following the live theme + accent (colored themes
-// fall back to the teal site identity)
-const wmSrc = computed(() => {
-  const t = styleStore.ktTheme;
-  // Colored themes (blood/greed/cyanotic) use bespoke textured wordmarks
-  // with the warm theme-ink 'Tools' baked in.
-  if (!NEUTRAL_THEMES.includes(t)) {
-    return `/brand/killertools-wordmark-${t}.png`;
-  }
-  const accent = styleStore.ktAccent || THEME_DEFAULT_ACCENT[t] || 'teal';
-  const suffix = t === 'light' ? 'light' : t === 'black' ? 'black' : 'dark';
-  return `/brand/killertools-wordmark-${accent}-${suffix}.png`;
-});
+const wmSrc = computed(() =>
+  styleStore.ktTheme === 'light' ? '/brand/itrx-wordmark-light.png' : '/brand/itrx-wordmark-dark.png',
+);
 
 const { t } = useI18n();
 
@@ -56,11 +46,9 @@ const tools = computed<ToolCategory[]>(() => [
         >
           <NIcon size="25" :component="ChevronLeft" />
         </button>
-        <RouterLink to="/" class="sider-logo" aria-label="KillerTools home">
-          <!-- Brand icon: large behind the wordmark, fading toward the bottom -->
+        <RouterLink to="/" class="sider-logo" aria-label="IT Rx Tools home">
           <img class="wm-bg" src="/app-icon-512.png" alt="" aria-hidden="true">
-          <!-- Generated beveled wordmark art (per-accent files) -->
-          <img class="wm" :src="wmSrc" alt="KillerTOOLS">
+          <img class="wm" :src="wmSrc" alt="IT Rx Tools">
         </RouterLink>
 
         <CollapsibleToolMenu :tools-by-category="tools" />
@@ -89,9 +77,9 @@ const tools = computed<ToolCategory[]>(() => [
 
         <!-- Mobile brand: icon + wordmark centered in the bar while the
              sidebar (and its logo) is hidden -->
-        <router-link to="/" class="tb-brand" aria-label="KillerTools home">
+        <router-link to="/" class="tb-brand" aria-label="IT Rx Tools home">
           <img class="tb-brand-icon" src="/app-icon-512.png" alt="">
-          <img class="tb-brand-wm" :src="wmSrc" alt="KillerTOOLS">
+          <img class="tb-brand-wm" :src="wmSrc" alt="IT Rx Tools">
         </router-link>
 
         <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
