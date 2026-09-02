@@ -12,9 +12,9 @@ import ToolCard from '../components/ToolCard.vue';
 
 const toolStore = useToolStore();
 
-const homeTitle = 'Killer Tools - Handy online tools for developers and IT pros';
-const homeDescription = 'A free, open-source collection of handy online tools for developers, sysadmins, and IT pros. Converters, generators, network utilities, and more. No ads, no tracking.';
-const homeUrl = 'https://killertools.net/';
+const homeTitle = 'IT Rx Tools - Handy tools for Utilitra technicians';
+const homeDescription = 'A browser-based toolbox for Utilitra technicians. Network utilities, M365 tools, PowerShell, converters, and more. Everything runs client-side — nothing is sent to a server.';
+const homeUrl = 'https://itrxtools.utilitra.com/';
 useHead({
   title: homeTitle,
   link: [
@@ -35,12 +35,12 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        'name': 'Killer Tools',
+        'name': 'IT Rx Tools',
         'url': homeUrl,
         'description': homeDescription,
         'publisher': {
           '@type': 'Organization',
-          'name': 'Killer Tools',
+          'name': 'Utilitra',
           'url': homeUrl,
         },
       }),

@@ -10,9 +10,9 @@ import type { Tool } from '@/tools/tools.types';
 const route = useRoute();
 
 const head = computed<HeadObject>(() => {
-  const title = `${route.meta.name} - Killer Tools`;
+  const title = `${route.meta.name} - IT Rx Tools`;
   const description = (route.meta?.description as string) ?? '';
-  const url = `https://killertools.net${route.path}`;
+  const url = `https://itrxtools.utilitra.com${route.path}`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -28,8 +28,8 @@ const head = computed<HeadObject>(() => {
     },
     'publisher': {
       '@type': 'Organization',
-      'name': 'Killer Tools',
-      'url': 'https://killertools.net',
+      'name': 'Utilitra',
+      'url': 'https://itrxtools.utilitra.com',
     },
   };
   return {
