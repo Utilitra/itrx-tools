@@ -16,9 +16,7 @@ import MenuLayout from '../components/MenuLayout.vue';
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
 
-const wmSrc = computed(() =>
-  styleStore.ktTheme === 'light' ? '/brand/itrx-wordmark-light.png' : '/brand/itrx-wordmark-dark.png',
-);
+const wmSrc = computed(() => '/brand/itrx-small.png');
 
 const { t } = useI18n();
 
@@ -212,7 +210,7 @@ const tools = computed<ToolCategory[]>(() => [
   /* Hard guarantee: the block is always taller than the icon's fade extent
      (10px top + 150px x 86% mask = 139px), so the icon can NEVER flat-cut
      against the clip edge no matter how the wordmark sizing changes */
-  min-height: 140px;
+  min-height: 100px;
 
   /* Brand icon behind the wordmark: large, dimmed, anchored to the top of the
      block (never clipped) and fading out toward the bottom */
@@ -220,12 +218,11 @@ const tools = computed<ToolCategory[]>(() => [
     display: none;
   }
 
-  /* Generated wordmark art (shadow + bevel baked into the PNG) */
   .wm {
     position: relative;
     z-index: 1;
     display: block;
-    width: 293px;
+    width: 90px;
     height: auto;
   }
 }
