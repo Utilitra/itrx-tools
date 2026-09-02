@@ -217,21 +217,7 @@ const tools = computed<ToolCategory[]>(() => [
   /* Brand icon behind the wordmark: large, dimmed, anchored to the top of the
      block (never clipped) and fading out toward the bottom */
   .wm-bg {
-    position: absolute;
-    left: 50%;
-    top: 10px;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    opacity: 0.85;
-    pointer-events: none;
-    /* Fade must reach FULL transparency before the container's clip edge
-       (~147px block now that the wordmark art is a ~77px-tall image), otherwise
-       the icon flat-cuts at the bottom */
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 86%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 48%, rgba(0, 0, 0, 0) 86%);
-    z-index: 0;
+    display: none;
   }
 
   /* Generated wordmark art (shadow + bevel baked into the PNG) */
