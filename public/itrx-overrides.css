@@ -3,16 +3,8 @@
    Never edit src/App.vue directly; put overrides here instead.
    ───────────────────────────────────────────────────────────────────────── */
 
-/* Inter as the base font throughout the app */
-body,
-#app,
-.n-config-provider,
-.n-layout,
-.n-menu,
-.n-card,
-.n-button,
-.n-input,
-.n-select,
-.n-popover {
+/* Inter as the base font throughout the app.
+   Universal selector needed — Naive UI component styles otherwise win. */
+html, body, *:not(.killer-font) {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
 }
