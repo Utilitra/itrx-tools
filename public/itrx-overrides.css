@@ -1,0 +1,18 @@
+/* ── Utilitra brand overrides ──────────────────────────────────────────────
+   Safe to edit. Loaded after all upstream styles — anything here wins.
+   Never edit src/App.vue directly; put overrides here instead.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Inter as the base font throughout the app */
+body,
+#app,
+.n-config-provider,
+.n-layout,
+.n-menu,
+.n-card,
+.n-button,
+.n-input,
+.n-select,
+.n-popover {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
